@@ -8,7 +8,7 @@
 const isMember = false;
 const cartTotal = 600;
 
-if (isMember || cartTotal > 500) {
+if ((isMember) || (cartTotal > 500)) {
   console.log("Discount applied!");
 } else {
   console.log("No discount available.");
