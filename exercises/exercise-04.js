@@ -8,10 +8,13 @@
 const isMember = false;
 const cartTotal = 600;
 
-if (isMember && cartTotal > 500) {
+if (isMember || cartTotal > 500) {
   console.log("Discount applied!");
 } else {
   console.log("No discount available.");
 }
 
 // Fix:
+// -> ลองรัน ไม่ติดบัค ผล "No discount available." ออกหน้าคอนโซล แปลว่าเงื่อนไขเป็นเท็จ
+// -> อ่านโจทย์ พบว่าเงื่อนไขคือ OR แต่ โค้ดดั้งเดิมเขียนด้วย operator `&&` คือ AND จึงเปลี่ยนเป็น `||`
+// -> ลองรัน -- โอเค ผล "Discount applied!" ออกหน้าคอนโซล
